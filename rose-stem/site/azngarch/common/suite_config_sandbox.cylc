@@ -55,7 +55,7 @@
     [[SANDBOX_BUILD]]
         inherit=SANDBOX_SERIAL_QUEUE
         [[[environment]]]
-            PSYCLONE_TRANSFORMATION="azngarch-sandbox"
+            PSYCLONE_TRANSFORMATION="cpu-azngarch-sandbox"
         [[[directives]]]
              --ntasks=4
 
