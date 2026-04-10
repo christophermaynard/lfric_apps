@@ -171,9 +171,15 @@
         "gungho_model_gh_profile_omp8_48nodes-C512_MG_ex1a_perftools-gnu_production-64bit",
     ],
     "gungho_model_ex1a_gs": [
-        "gungho_model_gh_profile_omp1_6nodes-C256_MG_ex1a_cce_production-64bit",
-        "gungho_model_gh_profile_omp2_6nodes-C256_MG_ex1a_cce_production-64bit",
-        "gungho_model_gh_profile_omp4_6nodes-C256_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp1_12nodes-C256_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp2_12nodes-C256_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp4_12nodes-C256_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp1_48nodes-C512_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp2_48nodes-C512_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp4_48nodes-C512_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp1_192nodes-C1024_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp2_192nodes-C1024_MG_ex1a_cce_production-64bit",
+        "gungho_model_gh_profile_omp4_192nodes-C1024_MG_ex1a_cce_production-64bit",
     ],
     "gungho_model_ex1a_partitioning": [
         "gungho_model_test_partition-C896_MG_ex1a_cce_fast-debug-64bit",

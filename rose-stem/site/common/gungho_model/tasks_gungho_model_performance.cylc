@@ -44,7 +44,7 @@
         "resolution": "C256_MG",
         "DT": 900,
         "mpi_parts": 1536,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 40,
         "kgo_checks": [],
         "use_xios": false,
@@ -89,7 +89,7 @@
         "DT": 900,
         "mpi_parts": 768,
         "threads": 2,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 40,
         "kgo_checks": [],
         "use_xios": false,
@@ -134,7 +134,7 @@
         "DT": 900,
         "mpi_parts": 384,
         "threads": 4,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 40,
         "kgo_checks": [],
         "use_xios": false,
@@ -254,7 +254,7 @@
         "DT": 450,
         "mpi_parts": 6144,
         "threads": 1,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 40,
         "kgo_checks": [],
         "use_xios": false,
@@ -329,7 +329,7 @@
         "DT": 450,
         "mpi_parts": 3072,
         "threads": 2,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 30,
         "kgo_checks": [],
         "use_xios": false,
@@ -404,7 +404,7 @@
         "DT": 450,
         "mpi_parts": 1536,
         "threads": 4,
-        "tsteps": 384,
+        "tsteps": 100,
         "wallclock": 30,
         "kgo_checks": [],
         "use_xios": false,
@@ -481,6 +481,51 @@
         "threads": 8,
         "tsteps": 384,
         "wallclock": 30,
+        "kgo_checks": [],
+        "use_xios": false,
+        "log_level": "warning",
+    }) %}
+
+    {% elif task_ns.conf_name == "gh_profile_omp1_192nodes-C1024_MG" %}
+
+    {% do task_dict.update({
+        "opt_confs": ["held-suarez", "no_io"],
+        "resolution": "C1024_MG",
+        "DT": 225,
+        "mpi_parts": 24576,
+        "threads": 1,
+        "tsteps": 100,
+        "wallclock": 120,
+        "kgo_checks": [],
+        "use_xios": false,
+        "log_level": "warning",
+    }) %}
+
+    {% elif task_ns.conf_name == "gh_profile_omp2_192nodes-C1024_MG" %}
+
+    {% do task_dict.update({
+        "opt_confs": ["held-suarez", "no_io"],
+        "resolution": "C1024_MG",
+        "DT": 225,
+        "mpi_parts": 12288,
+        "threads": 2,
+        "tsteps": 100,
+        "wallclock": 120,
+        "kgo_checks": [],
+        "use_xios": false,
+        "log_level": "warning",
+    }) %}
+
+    {% elif task_ns.conf_name == "gh_profile_omp4_192nodes-C1024_MG" %}
+
+    {% do task_dict.update({
+        "opt_confs": ["held-suarez", "no_io"],
+        "resolution": "C1024_MG",
+        "DT": 225,
+        "mpi_parts": 6144,
+        "threads": 4,
+        "tsteps": 100,
+        "wallclock": 120,
         "kgo_checks": [],
         "use_xios": false,
         "log_level": "warning",
