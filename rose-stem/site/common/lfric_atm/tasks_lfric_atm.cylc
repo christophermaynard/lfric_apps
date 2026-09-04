@@ -157,7 +157,7 @@
         {% do task_dict.update({"kgo_checks": []}) %}
     {% endif %}
 
-{% elif task_ns.conf_name == "nwp_gal10_3n_1T-C192_MG" %}
+{% elif task_ns.conf_name == "nwp_gal10_384cpus_1T-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["physics_segmentation","um_dump","no_diags"],
@@ -168,7 +168,7 @@
         "threads": 1,
     }) %}
 
-{% elif task_ns.conf_name == "nwp_gal10_3n_2T-C192_MG" %}
+{% elif task_ns.conf_name == "nwp_gal10_384cpus_2T-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["physics_segmentation","um_dump","no_diags"],
@@ -179,7 +179,7 @@
         "threads": 2,
     }) %}
 
-{% elif task_ns.conf_name == "nwp_gal10_3n_4T-C192_MG" %}
+{% elif task_ns.conf_name == "nwp_gal10_384cpus_4T-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["physics_segmentation","um_dump","no_diags"],
