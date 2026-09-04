@@ -9,7 +9,7 @@
 {# Performance Group Tasks #}
 {# ####################### #}
 
-{% if task_ns.conf_name == "gh_profile_omp1_3nodes-C256_MG" %}
+{% if task_ns.conf_name == "gh_profile_omp1_384cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -23,7 +23,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_6nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_768cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -37,7 +37,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_12nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_1536cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -51,7 +51,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_3nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_384cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -66,7 +66,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_6nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_768cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -81,7 +81,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_12nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_1536cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -96,7 +96,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_3nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_384cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -111,7 +111,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_6nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_768cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -126,7 +126,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_12nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_1536cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -141,7 +141,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_3nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_384cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -156,7 +156,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_6nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_768cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -172,7 +172,7 @@
     }) %}
 
 
-{% elif task_ns.conf_name == "gh_profile_omp8_12nodes-C256_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_1536cpus-C256_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -186,7 +186,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_3nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_384cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -201,7 +201,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_6nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_768cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -216,7 +216,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_12nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_1536cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -231,7 +231,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_24nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_3072cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -246,7 +246,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_48nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_6144cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -261,7 +261,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_3nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_384cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -276,7 +276,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_6nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_768cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -291,7 +291,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_12nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_1536cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -306,7 +306,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_24nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_3072cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -321,7 +321,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp2_48nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp2_6144cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -336,7 +336,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_3nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_384cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -351,7 +351,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_6nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_768cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -366,7 +366,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_12nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_1536cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -381,7 +381,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_24nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_3072cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -396,7 +396,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp4_48nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp4_6144cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -411,7 +411,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_3nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_384cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -426,7 +426,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_6nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_768cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -441,7 +441,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_12nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_1536cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -456,7 +456,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_24nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_3072cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -471,7 +471,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp8_48nodes-C512_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp8_6144cpus-C512_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -486,7 +486,7 @@
         "log_level": "warning",
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_6nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_768cpus-C192_MG" %}
 
    {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -500,7 +500,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp6_6nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp6_768cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -515,7 +515,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp9_6nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp9_768cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -530,7 +530,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_12nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_1536cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -547,7 +547,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp6_12nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp6_1536cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -562,7 +562,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp9_12nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp9_1536cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -577,7 +577,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp1_24nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp1_3072cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -591,7 +591,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp6_24nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp6_3072cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
@@ -606,7 +606,7 @@
         "kgo_checks": [],
     }) %}
 
-{% elif task_ns.conf_name == "gh_profile_omp9_24nodes-C192_MG" %}
+{% elif task_ns.conf_name == "gh_profile_omp9_3072cpus-C192_MG" %}
 
     {% do task_dict.update({
         "opt_confs": ["held-suarez", "no_io"],
