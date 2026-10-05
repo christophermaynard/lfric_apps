@@ -739,6 +739,53 @@
         "plot_str": "plot_map.py -ral $NODAL_DATA_DIR/lfric_diagnostics.nc  $PLOT_DIR",
     }) %}
 
+{% elif task_ns.conf_name.startswith("ral3_scale_") %}
+
+    {# MPI/OpenMP scaling ladder on the 672x672 UK mesh.                       #}
+    {# The key names the local volume of the 1-thread member of each subgroup. #}
+    {# Within a subgroup mpi_parts * threads is constant, so all three members #}
+    {# occupy the same number of cores and the same number of nodes.           #}
+    {% set ral3_scale_configs = {
+        "48x48_1T": {"mpi_parts": 196,  "threads": 1, "wallclock": 120},
+        "48x48_2T": {"mpi_parts": 98,   "threads": 2, "wallclock": 120},
+        "48x48_4T": {"mpi_parts": 49,   "threads": 4, "wallclock": 120},
+        "24x24_1T": {"mpi_parts": 784,  "threads": 1, "wallclock": 45},
+        "24x24_2T": {"mpi_parts": 392,  "threads": 2, "wallclock": 45},
+        "24x24_4T": {"mpi_parts": 196,  "threads": 4, "wallclock": 45},
+        "16x16_1T": {"mpi_parts": 1764, "threads": 1, "wallclock": 30},
+        "16x16_2T": {"mpi_parts": 882,  "threads": 2, "wallclock": 30},
+        "16x16_4T": {"mpi_parts": 441,  "threads": 4, "wallclock": 30},
+        "12x12_1T": {"mpi_parts": 3136, "threads": 1, "wallclock": 30},
+        "12x12_2T": {"mpi_parts": 1568, "threads": 2, "wallclock": 30},
+        "12x12_4T": {"mpi_parts": 784,  "threads": 4, "wallclock": 30},
+        "8x8_1T":   {"mpi_parts": 7056, "threads": 1, "wallclock": 30},
+        "8x8_2T":   {"mpi_parts": 3528, "threads": 2, "wallclock": 30},
+        "8x8_4T":   {"mpi_parts": 1764, "threads": 4, "wallclock": 30},
+    } %}
+
+    {% set ral3_scale_key = task_ns.conf_name.split("-")[0]|replace("ral3_scale_", "", 1) %}
+
+    {% if ral3_scale_key not in ral3_scale_configs %}
+        {{ raise("Unknown ral3_scale configuration '"~ral3_scale_key~"' in task "~task) }}
+    {% endif %}
+
+    {% do task_dict.update({
+        "opt_confs": ["l70_40km","ral3","ral_opts","hh_solve","native_wind_transport"],
+        "resolution": "uk_672x672_MG",
+        "DT": 60,
+        "tsteps": 180,
+        "crun": 1,
+        "crun_compare": false,
+        "xios_nodes": 2,
+        "mpi_parts_xios" : 64,
+        "xios_min_buffer_size": 2097152,
+        "log_level": "info",
+        "kgo_checks": [],
+        "plot_str": "",
+    }) %}
+
+    {% do task_dict.update(ral3_scale_configs[ral3_scale_key]) %}
+
 {% elif task_ns.conf_name == "ral3-ukv_MG" %}
 
     {% do task_dict.update({

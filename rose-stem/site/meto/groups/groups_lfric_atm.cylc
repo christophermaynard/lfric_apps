@@ -277,6 +277,49 @@
         "lfric_atm_clim_gal10_2T-C48_MG_ex1a_gnu_fast-debug-32bit",
         "lfric_atm_clim_gal10_4T-C48_MG_ex1a_gnu_fast-debug-32bit",
     ],
+    }) %}
+
+{# ###################################################################### #}
+{# EX1A RAL3 MPI/OpenMP scaling ladder on the 672x672 UK mesh #}
+{# Each subgroup holds the core count fixed and trades MPI ranks for #}
+{# OpenMP threads. The subgroup name is the local volume of its 1T member. #}
+{# ###################################################################### #}
+{% do site_groups.update({
+    "ex1a_ral3_scale_48x48": [
+        "lfric_atm_ral3_scale_48x48_1T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_48x48_2T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_48x48_4T-uk_672_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ral3_scale_24x24": [
+        "lfric_atm_ral3_scale_24x24_1T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_24x24_2T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_24x24_4T-uk_672_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ral3_scale_16x16": [
+        "lfric_atm_ral3_scale_16x16_1T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_16x16_2T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_16x16_4T-uk_672_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ral3_scale_12x12": [
+        "lfric_atm_ral3_scale_12x12_1T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_12x12_2T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_12x12_4T-uk_672_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ral3_scale_8x8": [
+        "lfric_atm_ral3_scale_8x8_1T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_8x8_2T-uk_672_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ral3_scale_8x8_4T-uk_672_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ral3_scale": [
+        "ex1a_ral3_scale_48x48",
+        "ex1a_ral3_scale_24x24",
+        "ex1a_ral3_scale_16x16",
+        "ex1a_ral3_scale_12x12",
+        "ex1a_ral3_scale_8x8",
+    ],
+    }) %}
+
+{% do site_groups.update({
     "lfric_atm_ex1a": [
         "lfric_atm_ex1a_developer",
         "lfric_atm_ex1a_extra",
