@@ -301,8 +301,6 @@
         "lfric_atm_ral3_scale_16x16_4T-uk_672_MG_ex1a_cce_production-32bit",
     ],
     "ex1a_ral3_scale_12x12": [
-        "lfric_atm_ral3_scale_12x12_1T-uk_672_MG_ex1a_cce_production-32bit",
-        "lfric_atm_ral3_scale_12x12_2T-uk_672_MG_ex1a_cce_production-32bit",
         "lfric_atm_ral3_scale_12x12_4T-uk_672_MG_ex1a_cce_production-32bit",
     ],
     "ex1a_ral3_scale_8x8": [

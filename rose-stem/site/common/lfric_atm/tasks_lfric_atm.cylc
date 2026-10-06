@@ -745,6 +745,9 @@
     {# The key names the local volume of the 1-thread member of each subgroup. #}
     {# Within a subgroup mpi_parts * threads is constant, so all three members #}
     {# occupy the same number of cores and the same number of nodes.           #}
+    {# 12x12 has only a 4-thread member: at 1 and 2 threads the rank counts    #}
+    {# factorise as 56x56 and 56x28, and 56 does not divide the 84x84 coarsest #}
+    {# mesh of the four-level multigrid chain.                                 #}
     {% set ral3_scale_configs = {
         "48x48_1T": {"mpi_parts": 196,  "threads": 1, "wallclock": 120},
         "48x48_2T": {"mpi_parts": 98,   "threads": 2, "wallclock": 120},
@@ -755,8 +758,6 @@
         "16x16_1T": {"mpi_parts": 1764, "threads": 1, "wallclock": 30},
         "16x16_2T": {"mpi_parts": 882,  "threads": 2, "wallclock": 30},
         "16x16_4T": {"mpi_parts": 441,  "threads": 4, "wallclock": 30},
-        "12x12_1T": {"mpi_parts": 3136, "threads": 1, "wallclock": 30},
-        "12x12_2T": {"mpi_parts": 1568, "threads": 2, "wallclock": 30},
         "12x12_4T": {"mpi_parts": 784,  "threads": 4, "wallclock": 30},
         "8x8_1T":   {"mpi_parts": 7056, "threads": 1, "wallclock": 30},
         "8x8_2T":   {"mpi_parts": 3528, "threads": 2, "wallclock": 30},
