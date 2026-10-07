@@ -101,6 +101,18 @@
 {% endif %}
 
 
+{# Copy Vernier profile output back from each platform to the launch machine. #}
+{# One task per platform, triggered once everything on that platform is done. #}
+{% if FETCH_VERNIER %}
+    {% for platform in requested_platforms %}
+        {% do tasks_to_run.update({"fetch-vernier_"~platform: {} }) %}
+        {% do graph_sections.append([
+            platform|upper~":succeed-all?",
+            "fetch-vernier_"~platform]) %}
+    {% endfor %}
+{% endif %}
+
+
 {# Set Housekeeping task if housekeeping is true - default value #}
 {# One housekeeping task per platform being run on #}
 {# Waits for all tasks on that platform to finish before ruuning #}
@@ -118,6 +130,12 @@
         {% do graph_sections.append([
             "BUILD_"~platform|upper~":succeed-all?",
             housekeeping_task]) %}
+{# Housekeeping deletes the work directories the profiles are fetched from. #}
+        {% if FETCH_VERNIER %}
+            {% do graph_sections.append([
+                "fetch-vernier_"~platform,
+                housekeeping_task]) %}
+        {% endif %}
         {% if platform == site_vars["scripts_platform"] %}
             {% if running_scripts.bool %}
                 {% do graph_sections.append([

@@ -81,6 +81,35 @@
 
     {% endif %}
 
+{% elif task.startswith("fetch-vernier") %}
+{# Task to rsync Vernier profile output from a platform's task work #}
+{# directories back to the machine the workflow was launched from. #}
+{# Runs on the launch machine, so pulls rather than pushes. #}
+
+    {% set platform = task.split('_')[1] %}
+
+    {% if VERNIER_DEST_DIR %}
+        {% set vernier_dest = VERNIER_DEST_DIR %}
+    {% else %}
+        {% set vernier_dest = "$CYLC_WORKFLOW_SHARE_DIR/vernier" %}
+    {% endif %}
+
+    [[{{task}}]]
+        inherit = FETCH-VERNIER, {{platform|upper}}_EXPORT-SOURCE, CONTROL_TASK_RETRIES
+        script = """
+                 if [[ "$PLATFORM_SYNC" = true ]] ; then
+                   RELATIVE_WORK_DIR=`echo $CYLC_WORKFLOW_WORK_DIR | sed "s|$HOME/||"`
+                   SOURCE_DIR=$hostname:$RELATIVE_WORK_DIR/1/
+                 else
+                   SOURCE_DIR=$CYLC_WORKFLOW_WORK_DIR/1/
+                 fi
+                 mkdir -p $VERNIER_DEST_DIR
+                 rsync -a --prune-empty-dirs --include="*/" --include="vernier-output-*" --exclude="*" $SOURCE_DIR $VERNIER_DEST_DIR/
+                 echo "Fetched $(find $VERNIER_DEST_DIR -name 'vernier-output-*' | wc -l) Vernier files to $VERNIER_DEST_DIR"
+                 """
+        [[[environment]]]
+            VERNIER_DEST_DIR = {{vernier_dest}}
+
 {% elif task.startswith("housekeep") %}
 
     {% set platform = task.split('_')[1] %}

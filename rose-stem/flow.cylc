@@ -128,6 +128,7 @@
     {% endif %}
     {% if not defined_dict and
             not task.startswith("export-") and
+            not task.startswith("fetch-vernier") and
             not task.startswith("remote-init") and
             not task.startswith("housekeep") %}
         {% set task_dict = tasks_to_run[task].copy() %}

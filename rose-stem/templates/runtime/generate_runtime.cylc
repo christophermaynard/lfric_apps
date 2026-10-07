@@ -11,6 +11,7 @@
 {% set task_values = tasks_to_run[task] %}
 
 {% if task.startswith("export-") or
+      task.startswith("fetch-vernier") or
       task.startswith("housekeep") or
       task.startswith("remote-init") %}
 

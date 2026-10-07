@@ -68,4 +68,8 @@
     [[HOUSEKEEPING]]
 {% endif %}
 
+{% if FETCH_VERNIER %}
+    [[FETCH-VERNIER]]
+{% endif %}
+
 {% do LOG.debug("Finished in templates/runtime/set_task_families.cylc") %}
