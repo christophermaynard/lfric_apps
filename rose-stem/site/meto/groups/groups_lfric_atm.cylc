@@ -317,6 +317,48 @@
     ],
     }) %}
 
+{# ###################################################################### #}
+{# EX1A MPI/OpenMP scaling ladder on the 960x1024 variable resolution UKV #}
+{# mesh. As for ex1a_ral3_scale, each subgroup holds the core count fixed #}
+{# and trades MPI ranks for OpenMP threads, and the subgroup name is the #}
+{# local volume of its 1T member. The subgroups are 5, 10, 20, 40 and 80 #}
+{# nodes respectively. #}
+{# ###################################################################### #}
+{% do site_groups.update({
+    "ex1a_ukv_scale_32x32": [
+        "lfric_atm_ukv_scale_32x32_1T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_32x32_2T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_32x32_4T-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ukv_scale_32x16": [
+        "lfric_atm_ukv_scale_32x16_1T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_32x16_2T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_32x16_4T-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ukv_scale_16x16": [
+        "lfric_atm_ukv_scale_16x16_1T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x16_2T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x16_4T-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ukv_scale_16x8": [
+        "lfric_atm_ukv_scale_16x8_1T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x8_2T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x8_4T-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ukv_scale_8x8": [
+        "lfric_atm_ukv_scale_8x8_1T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_8x8_2T-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_8x8_4T-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    "ex1a_ukv_scale": [
+        "ex1a_ukv_scale_32x32",
+        "ex1a_ukv_scale_32x16",
+        "ex1a_ukv_scale_16x16",
+        "ex1a_ukv_scale_16x8",
+        "ex1a_ukv_scale_8x8",
+    ],
+    }) %}
+
 {% do site_groups.update({
     "lfric_atm_ex1a": [
         "lfric_atm_ex1a_developer",
