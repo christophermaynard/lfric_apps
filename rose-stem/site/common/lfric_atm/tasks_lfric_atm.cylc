@@ -511,6 +511,43 @@
         "plot_str": "plot_map.py $NODAL_DATA_DIR/lfric_diagnostics.nc  $PLOT_DIR",
     }) %}
 
+{% elif task_ns.conf_name.startswith("nwp_gal10_scale_") %}
+
+    {# C896 strong scaling on 49, 98 and 196 EX1A nodes, 2 threads per rank. #}
+    {# The coarsest multigrid level is C112, so panel_xproc and panel_yproc   #}
+    {# must both divide 112; set explicitly rather than trusting 'auto'.      #}
+    {% set c896_scale_configs = {
+        "49n":  {"mpi_parts": 4704,  "xproc": 28, "yproc": 28},
+        "98n":  {"mpi_parts": 9408,  "xproc": 28, "yproc": 56},
+        "196n": {"mpi_parts": 18816, "xproc": 56, "yproc": 56},
+    } %}
+
+    {% set c896_scale_key = task_ns.conf_name.split("-")[0]|replace("nwp_gal10_scale_", "", 1) %}
+
+    {% if c896_scale_key not in c896_scale_configs %}
+        {{ raise("Unknown nwp_gal10_scale configuration '"~c896_scale_key~"' in task "~task) }}
+    {% endif %}
+
+    {% do task_dict.update({
+        "opt_confs": ["um_dump","no_diags"],
+        "resolution": "C896_MG",
+        "DT": 240,
+        "tsteps": 720,
+        "threads": 2,
+        "wallclock": 60,
+        "panel_decomp": "custom",
+        "xios_nodes": 8,
+        "mpi_parts_xios" : 256,
+        "log_level": "info",
+        "log_to_rank_zero_only": ".true.",
+        "xios_min_buffer_size": 10485760,
+        "restart_write": false,
+        "kgo_checks": [],
+        "plot_str": "",
+    }) %}
+
+    {% do task_dict.update(c896_scale_configs[c896_scale_key]) %}
+
 
 {# ###################################################################### #}
 {# Global Climate jobs #}

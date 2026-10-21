@@ -279,6 +279,15 @@
     ],
     }) %}
 
+{# EX1A C896 global strong scaling, no diagnostics, 8 XIOS nodes each #}
+{% do site_groups.update({
+    "C896-scale": [
+        "lfric_atm_nwp_gal10_scale_49n-C896_MG_ex1a_cce_production-32bit",
+        "lfric_atm_nwp_gal10_scale_98n-C896_MG_ex1a_cce_production-32bit",
+        "lfric_atm_nwp_gal10_scale_196n-C896_MG_ex1a_cce_production-32bit",
+    ],
+    }) %}
+
 {# ###################################################################### #}
 {# EX1A RAL3 MPI/OpenMP scaling ladder on the 672x672 UK mesh #}
 {# Each subgroup holds the core count fixed and trades MPI ranks for #}
