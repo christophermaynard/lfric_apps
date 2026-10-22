@@ -189,6 +189,9 @@
 {% if "memory_plot_ex" in task_values %}
             MEMORY_PROFILE          = {{task_values["memory_plot_ex"]}}
 {% endif %}
+{% if "vernier_output_mode" in task_values %}
+            VERNIER_OUTPUT_MODE     = {{task_values["vernier_output_mode"]}}
+{% endif %}
 
 {% if task_ns.application == "lfricinputs" %}
     {% include "templates/runtime/lfricinputs_task_environment.cylc" %}

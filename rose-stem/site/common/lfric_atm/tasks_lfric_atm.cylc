@@ -544,6 +544,7 @@
         "restart_write": false,
         "kgo_checks": [],
         "plot_str": "",
+        "vernier_output_mode": "single",
     }) %}
 
     {% do task_dict.update(c896_scale_configs[c896_scale_key]) %}
