@@ -874,11 +874,18 @@
 
     {% set ukv_scale_key = task_ns.conf_name.split("-")[0]|replace("ukv_scale_", "", 1) %}
 
-    {# An optional _xios<N>n suffix sets N XIOS nodes at 16 XIOS ranks per node. #}
+    {# An optional _xios<N>r suffix sets N XIOS ranks at 8 ranks per XIOS node.    #}
+    {# N must divide 64, the gcd of the W3 (983040) and W2H (1968064) horizontal #}
+    {# dof counts, or the last XIOS server segfaults.                            #}
+    {% set ukv_xios_ranks = 64 %}
     {% set ukv_xios_nodes = 4 %}
     {% if "_xios" in ukv_scale_key %}
-        {% set ukv_xios_nodes = ukv_scale_key.split("_xios")[1]|replace("n", "")|int %}
+        {% set ukv_xios_ranks = ukv_scale_key.split("_xios")[1]|replace("r", "")|int %}
+        {% set ukv_xios_nodes = ((ukv_xios_ranks + 7) // 8) %}
         {% set ukv_scale_key = ukv_scale_key.split("_xios")[0] %}
+        {% if 64 % ukv_xios_ranks != 0 %}
+            {{ raise("XIOS ranks "~ukv_xios_ranks~" must divide 64 on the ukv mesh in task "~task) }}
+        {% endif %}
     {% endif %}
 
     {% if ukv_scale_key not in ukv_scale_configs %}
@@ -894,7 +901,7 @@
         "crun_compare": false,
         "panel_decomp": "custom",
         "xios_nodes": ukv_xios_nodes,
-        "mpi_parts_xios" : 16 * ukv_xios_nodes,
+        "mpi_parts_xios" : ukv_xios_ranks,
         "xios_min_buffer_size": 2097152,
         "log_level": "info",
         "wallclock": 120,

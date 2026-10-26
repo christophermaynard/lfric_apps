@@ -368,12 +368,12 @@
     ],
     }) %}
 
-{# UKV 16x16 subgroup (20 model nodes) with 2, 4, 8 and 12 XIOS nodes at #}
-{# 16 XIOS ranks per node, to test whether lfric_xios.read_fldg is server bound. #}
+{# UKV 16x16 subgroup (20 model nodes) with 8, 16, 32 and 64 XIOS ranks at #}
+{# 8 ranks per XIOS node, to test how lfric_xios.read_fldg scales with servers. #}
 {% set ukv_xios_scale_tasks = [] %}
-{% for xn in [2, 4, 8, 12] %}
+{% for xr in [8, 16, 32, 64] %}
     {% for t in ["1T", "2T", "4T"] %}
-        {% do ukv_xios_scale_tasks.append("lfric_atm_ukv_scale_16x16_" ~ t ~ "_xios" ~ xn ~ "n-ukv_MG_ex1a_cce_production-32bit") %}
+        {% do ukv_xios_scale_tasks.append("lfric_atm_ukv_scale_16x16_" ~ t ~ "_xios" ~ xr ~ "r-ukv_MG_ex1a_cce_production-32bit") %}
     {% endfor %}
 {% endfor %}
 {% do site_groups.update({"ukv_xios_scale": ukv_xios_scale_tasks}) %}
