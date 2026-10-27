@@ -64,6 +64,9 @@
 
     [[EX1A_RUN]]
         [[[environment]]]
+            MPICH_MPIIO_STATS=1
+            MPICH_ENV_DISPLAY=1
+            MPICH_MPIIO_TIMERS=1
             {# BIG_DATA_DIR holds ancils and dump files #}
 {% if site_vars["ex_trustzone"] == "collab" %}
             BIG_DATA_DIR = '/data/users/lfricadmin.mon/data'

@@ -378,6 +378,15 @@
 {% endfor %}
 {% do site_groups.update({"ukv_xios_scale": ukv_xios_scale_tasks}) %}
 
+{# UKV 16x16_2T with MPI-IO stats: 32 XIOS ranks on 4 nodes, 64 on 4 and 64 on 8. #}
+{% do site_groups.update({
+    "ukv_scale_xios_io": [
+        "lfric_atm_ukv_scale_16x16_2T_xios32r4n-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x16_2T_xios64r4n-ukv_MG_ex1a_cce_production-32bit",
+        "lfric_atm_ukv_scale_16x16_2T_xios64r8n-ukv_MG_ex1a_cce_production-32bit",
+    ],
+    }) %}
+
 {% do site_groups.update({
     "lfric_atm_ex1a": [
         "lfric_atm_ex1a_developer",
